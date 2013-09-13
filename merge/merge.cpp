@@ -31,6 +31,7 @@ int main(){
     start = std::clock();
     for(k=0;k<1000;k++)
     {
+        // random data
         //for(i=0;i<MAX;i++)
             //v[i]=(rand() % 1000000) + 1;
         mergesort(v,0,n-1);
