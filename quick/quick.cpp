@@ -30,11 +30,12 @@ int main(){
     start = std::clock();
     for(k=0;k<1000;k++)
     {
+        // random data generator
         //for(i=0;i<MAX;i++)
             //v[i]=(rand() % 1000000) + 1;
         quicksort(v,0,n-1);
 
-        // correctness tester, doesn't work for some reason...
+        // correctness tester
         for(i=n-1;i>0;i--)
             if(v[i]<v[i-1]) j=1;
     }    
@@ -60,7 +61,8 @@ void quicksort(int* vector,int l,int r){
     {
         // sets the pivot as the element in the middle of the vector
         // according to http://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot
-        // this is a good choice of pivot
+        // this is a better choice of pivot than simply selection the first
+        // element of the array
         pivot=(l+r)/2;
         // partition of the vector
         new_pivot=partition(vector,l,r,pivot);

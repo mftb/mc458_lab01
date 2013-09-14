@@ -35,11 +35,12 @@ int main(){
     start = std::clock();
     for(k=0;k<1000;k++)
     {
+        // random data generator
         //for(i=0;i<MAX;i++)
             //v[i]=(rand() % 1000000) + 1;
         heapsort(v,n);
-
-        // correctness tester, doesn't work for some reason...
+        
+        // correctness tester
         for(i=n-1;i>0;i--)
             if(v[i]<v[i-1]) j=1;
     }    
@@ -72,25 +73,34 @@ void heapsort(int* vector,int count){
 }
 
 
+// builds the heap bottom-up using sift_down
 void heapify(int* vector,int count){
     int start;
+    // start is the index of the last parent node
     start=(count-2)/2;
+    // creates the heap
     while(start>=0)
         sift_down(vector,start--,count-1);
 }
 
-
+// this function puts values in the heap from bottom-up
 void sift_down(int* vector, int start, int end){
     int root,child,aux,swap;
     root=start;
+    // do while the root has at least one child
     while((root*2+1)<=end)
     {
+        // left child
         child=root*2+1;
         swap=root;
+        // checks whether the root is smaller than the child
         if(vector[swap]<vector[child])
             swap=child;
+        // checks whether the child to the right exists and if it is bigger than
+        // the value we are willing to swap
         if(((child+1)<=end)&&(vector[swap]<vector[child+1]))
             swap=child+1;
+        // checks if it is in need to swap
         if(swap!=root)
         {
             aux=vector[root];
@@ -102,5 +112,3 @@ void sift_down(int* vector, int start, int end){
             return;
     }
 }
-
-

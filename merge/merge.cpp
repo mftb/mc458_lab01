@@ -11,7 +11,6 @@ void mergesort(int*,int,int);
 // mergesort merge auxiliary function
 void merge(int*,int,int,int,int);
 
-
 int main(){
     std::clock_t start;
     double duration;
@@ -31,12 +30,12 @@ int main(){
     start = std::clock();
     for(k=0;k<1000;k++)
     {
-        // random data
+        // random data generator
         //for(i=0;i<MAX;i++)
             //v[i]=(rand() % 1000000) + 1;
         mergesort(v,0,n-1);
 
-        // correctness tester, doesn't work for some reason...
+        // correctness tester
         for(i=n-1;i>0;i--)
             if(v[i]<v[i-1]) j=1;
     }    
