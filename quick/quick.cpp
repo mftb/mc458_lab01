@@ -32,7 +32,7 @@ int main(){
     {
         //for(i=0;i<MAX;i++)
             //v[i]=(rand() % 1000000) + 1;
-        quicksort(v,0,MAX-1);
+        quicksort(v,0,n-1);
 
         // correctness tester, doesn't work for some reason...
         for(i=n-1;i>0;i--)
@@ -59,6 +59,8 @@ void quicksort(int* vector,int l,int r){
     else
     {
         // sets the pivot as the element in the middle of the vector
+        // according to http://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot
+        // this is a good choice of pivot
         pivot=(l+r)/2;
         // partition of the vector
         new_pivot=partition(vector,l,r,pivot);
