@@ -63,8 +63,6 @@ void quicksort(int* vector,int l,int r){
         // according to http://en.wikipedia.org/wiki/Quicksort#Choice_of_pivot
         // this is a better choice of pivot than simply selection the first
         // element of the array
-        // maybe should be better use pivot=l in order to make optimizations
-        // appear more
         pivot=(l+r)/2;
         // partition of the vector
         new_pivot=partition(vector,l,r,pivot);

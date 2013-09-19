@@ -1,0 +1,61 @@
+IN GENERAL: 
+Best case when the element are sorted in descending order and worst case when elements are sorted in ascending order. (http://prosuncsedu.wordpress.com/2011/04/10/best-case-and-worst-case-situation-of-sorting-algorithms/)
+
+
+
+BUBBLE
+
+The only significant advantage that bubble sort has over most other implementations, even quicksort, but not insertion sort, is that the ability to detect that the list is sorted is efficiently built into the algorithm. Performance of bubble sort over an already-sorted list (best-case) is O(n). Bubble sort should be avoided in case of large collections. It will not be efficient in case of reverse ordered collection. The positions of the elements in bubble sort will play a large part in determining its performance. Large elements at the beginning of the list do not pose a problem, as they are quickly swapped. Small elements towards the end, however, move to the beginning extremely slowly. This has led to these types of elements being named rabbits and turtles, respectively. (http://en.wikipedia.org/wiki/Bubblesort)
+
+-> melhor caso: lista já ordenada
+-> pior caso: lista já ordenada, só que invertida
+OBS: coxa de gerar
+
+
+INSERTION
+
+However, not only does insertion sort have this mechanism too, but it also performs better on a list that is substantially sorted (having a small number of inversions). Adaptive (i.e., efficient) for data sets that are already substantially sorted: the time complexity is O(n + d), where d is the number of inversions. More efficient in practice than most other simple quadratic (i.e., O(n2)) algorithms such as selection sort or bubble sort; the best case (nearly sorted input) is O(n). The simplest worst case input is an array sorted in reverse order. The set of all worst case inputs consists of all arrays where each element is the smallest or second-smallest of the elements before it. In these cases every iteration of the inner loop will scan and shift the entire sorted subsection of the array before inserting the next element. This gives insertion sort a quadratic running time (i.e., O(n2)). Calculations show that insertion sort will usually perform about half as many comparisons as selection sort. Assuming the k+1st element's rank is random, insertion sort will on average require shifting half of the previous k elements, while selection sort always requires scanning all unplaced elements. If the input array is reverse-sorted, insertion sort performs as many comparisons as selection sort. If the input array is already sorted, insertion sort performs as few as n-1 comparisons, thus making insertion sort more efficient when given sorted or "nearly sorted" arrays.  (http://en.wikipedia.org/wiki/Bubblesort, http://en.wikipedia.org/wiki/Insertion_sort)
+
+-> melhor caso: lista já ordenada, pode-se pensar em um "segundo melhor caso" no qual o vetor está "semi-ordenado"
+-> pior caso: lista já ordenada, só que invertida
+OBS: coxa de gerar
+
+
+MERGE
+
+Best case: Both increasing and decreasing order will lead to best case in merge sort. Worst case: Inputs are sorted in not increasing or decreasing fashion. Exactly big and small values should be interwoven so that in each marging state more comparison is needed. Ex: 100, 0, 101,1,102,2,103,3,104,4 … such list will have the maximum comparison in each merging. (http://prosuncsedu.wordpress.com/2011/04/10/best-case-and-worst-case-situation-of-sorting-algorithms/)
+
+-> melhor caso: lista ordenada em ordem crescente ou decrescente, tanto faz, foda-se
+-> pior caso: 100, 0, 101, 1, 102, 2, 103, 3, 104, 4…
+
+QUICK
+
+In randomization is not used and the pivot is chosen from the last element the worst case is when the input are totally sorted (either ascending or descending). But here the Complexity depends how pivot are chosen. (http://prosuncsedu.wordpress.com/2011/04/10/best-case-and-worst-case-situation-of-sorting-algorithms/)
+
+-> melhor caso: depende da porra do pivot
+-> pior caso: se o pivot é escolhido no final do vetor, o pior caso é o vetor já estar ordenado em ordem crescente ou decrescente
+
+
+
+HEAP
+
+Suspeitamos que o melhor caso seja a entrada já organizada como um min-heap, e o pior, a entrada organizada como um max-heap.
+http://cs.stackexchange.com/questions/1540/finding-a-worst-case-of-heap-sort
+
+-> melhor caso: entrada organizada como min-heap
+-> pior caso: entrada organizada como max-heap
+
+***
+
+
+QUICKSORT OPTIMIZATION
+
+The average case is also quadratic, which makes insertion sort impractical for sorting large arrays. However, insertion sort is one of the fastest algorithms for sorting very small arrays, even faster than quicksort; indeed, good quicksort implementations use insertion sort for arrays smaller than a certain threshold, also when arising as subproblems; the exact threshold must be determined experimentally and depends on the machine, but is commonly around ten. Some divide-and-conquer algorithms such as quicksort and mergesort sort by recursively dividing the list into smaller sublists which are then sorted. A useful optimization in practice for these algorithms is to use insertion sort for sorting small sublists, where insertion sort outperforms these more complex algorithms. The size of list for which insertion sort has the advantage varies by environment and implementation, but is typically between eight and twenty elements. (http://en.wikipedia.org/wiki/Insertion_sort)
+
+http://en.wikipedia.org/wiki/Quicksort#Implementation_issues
+
+
+
+
+
+
