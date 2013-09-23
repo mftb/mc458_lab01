@@ -28,7 +28,7 @@ int main(){
     //srand(time(NULL));
     j=0;
     start = std::clock();
-    for(k=0;k<1000;k++)
+    //for(k=0;k<1000;k++)
     {
         // random data generator
         //for(i=0;i<MAX;i++)
@@ -53,7 +53,7 @@ int main(){
 }
 
 void quicksort(int* vector,int l,int r){
-    int pivot,new_pivot;
+    int pivot,new_pivot,i;
     // base case
     if(l>=r)
         return;
@@ -65,7 +65,7 @@ void quicksort(int* vector,int l,int r){
         // element of the array
         // maybe should be better use pivot=l in order to make optimizations
         // appear more
-        pivot=(l+r)/2;
+        pivot=l;
         // partition of the vector
         new_pivot=partition(vector,l,r,pivot);
         // recursive call to the left subvector
