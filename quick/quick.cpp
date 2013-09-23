@@ -28,7 +28,7 @@ int main(){
     //srand(time(NULL));
     j=0;
     start = std::clock();
-    //for(k=0;k<1000;k++)
+    for(k=0;k<1000;k++)
     {
         // random data generator
         //for(i=0;i<MAX;i++)
@@ -53,7 +53,7 @@ int main(){
 }
 
 void quicksort(int* vector,int l,int r){
-    int pivot,new_pivot,i;
+    int pivot,new_pivot;
     // base case
     if(l>=r)
         return;
