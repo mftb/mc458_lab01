@@ -2,7 +2,7 @@
 
 v_out = ""
 
-for i in range(0,50):
+for i in range(0,10):
     for j in range(0,100):
         v_out = v_out + str(j*i)
         if j < 99:

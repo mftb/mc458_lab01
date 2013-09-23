@@ -21,7 +21,7 @@ def sift_up(a, start, end):
             return
 
 l = []
-for i in range(0,50):
+for i in range(0,10):
     a = []
     for j in range(0,100):
         a.append(randint(0,1000))
