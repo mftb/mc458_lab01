@@ -3,6 +3,7 @@
 v_out = ""
 
 for i in range(1,11):
+    v_out = v_out + "100, "
     for j in range(0,100):
         v_out = v_out + str((100-j)*i)
         if j < 99:

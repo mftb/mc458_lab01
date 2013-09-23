@@ -26,6 +26,7 @@ for i in range(0,10):
     for j in range(0,100):
         a.append(randint(0,1000))
     heapify(a,100)
+    a = [100] + a
     l.append(a)
 
 s = ""
