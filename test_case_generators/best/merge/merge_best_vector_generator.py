@@ -1,4 +1,4 @@
-# sorted vector generator
+# half sorted vectors, half inverted sorted vectors
 
 v_out = ""
 

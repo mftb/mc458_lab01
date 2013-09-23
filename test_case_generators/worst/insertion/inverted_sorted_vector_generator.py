@@ -1,4 +1,4 @@
-# sorted vector generator
+# inverted sorted vector generator
 
 v_out = ""
 

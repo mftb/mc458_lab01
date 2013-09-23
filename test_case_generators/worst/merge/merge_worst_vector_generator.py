@@ -1,4 +1,4 @@
-# sorted vector generator
+# each vector is a merge of 2 different but sorted vectors
 
 v_out = ""
 
