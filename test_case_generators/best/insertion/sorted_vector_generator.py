@@ -10,7 +10,6 @@ for i in range(0,10):
             v_out = v_out + ", "
         else:
             v_out = v_out + ";\n"
-v_out = v_out + "\n"
 
 print v_out
 

@@ -14,7 +14,6 @@ for i in range(1,11):
             v_out = v_out + ", "
         else:
             v_out = v_out + ";\n"
-v_out = v_out + "\n"
 
 print v_out
 

@@ -39,6 +39,5 @@ for i in l:
     for j in i[1:]:
         s = s + ", " + str(j)
     s = s + ";\n"
-s = s + "\n"
 
 print s

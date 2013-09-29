@@ -16,20 +16,24 @@ int main(){
     double duration;
     /* Your algorithm here */
     int v[MAX]; 
-    //int original[MAX];
-    int i,j,k,n;
+    int original[MAX];
+    int i,j,k,n,count;
     // reading data from stdin
-    scanf("%d, ", &n);
+    count=0;
+    while(scanf("%d, ", &n)!=EOF){    
     for(i=0;i<n-1;i++)
         scanf("%d, ", &v[i]);
-    scanf("%d;", &v[i]);
-    //for(i=0;i<n;i++)
-        //original[i]=v[i];
+    scanf("%d;\n", &v[i]);
+    for(i=0;i<n;i++)
+        original[i]=v[i];
     //srand(time(NULL));
     j=0;
     start = std::clock();
-    for(k=0;k<1000;k++)
+    for(k=0;k<1000000;k++)
     {
+        for(i=0;i<n;i++)
+            v[i]=original[i];
+    
         // random data generator
         //for(i=0;i<MAX;i++)
             //v[i]=(rand() % 1000000) + 1;
@@ -39,8 +43,8 @@ int main(){
         for(i=n-1;i>0;i--)
             if(v[i]<v[i-1]) j=1;
     }    
-    if(j) std::cout<<"TEST FAILED\n";
-    else std::cout<<"TEST PASSED\n";
+    if(j) std::cout<<"TEST "<<count++<<" FAILED\n";
+    else std::cout<<"TEST "<<count++<<" PASSED\n";
     // CSV correctness test generator
     /*
     std::cout<<"Original,Sorted\n";
@@ -48,7 +52,12 @@ int main(){
         std::cout<< original[i] << ',' << v[i] << '\n';
     */
     duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-    std::cout<<"duration "<< duration <<'\n';
+    std::cout<< duration <<'\n';
+    std::cout<<n<<", ";
+    for(i=0;i<n-1;i++)
+        std::cout<<v[i]<<", ";
+    std::cout<<v[n-1]<<";\n";    
+    }
     return 0;
 }
 
