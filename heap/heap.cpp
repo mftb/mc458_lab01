@@ -33,7 +33,7 @@ int main(){
     //srand(time(NULL));
     j=0;
     start = std::clock();
-    for(k=0;k<1000000;k++)
+    for(k=0;k<1000;k++)
     {
         for(i=0;i<n;i++)
             v[i]=original[i];
