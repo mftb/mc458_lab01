@@ -1,0 +1,139 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage [utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{indentfirst}
+\usepackage {fancyhdr}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{makeidx}
+\usepackage[usenames]{color}
+\newcommand{\todo}[1]{\textcolor{red}{\footnote{\textcolor{red}{TODO: #1}}}}
+
+%%% usado para codigo %%%
+\usepackage{listings}
+\lstset{
+%  language = C,
+  basicstyle=\footnotesize\ttfamily, 
+  numbers=left,               
+  numberstyle=\tiny,         
+  %stepnumber=2,              
+  numbersep=5pt,             
+  tabsize=2,                  
+  extendedchars=true,  
+  breaklines=true,       
+  keywordstyle=\color{blue},
+%  frame=b,         
+  stringstyle=\color{green}\ttfamily, 
+  showspaces=false,          
+  showtabs=false,             
+  xleftmargin=17pt,
+  framexleftmargin=17pt,
+  framexrightmargin=5pt,
+  framexbottommargin=4pt,
+  %backgroundcolor=\color{lightgray},
+  showstringspaces=false              
+}
+\lstloadlanguages{C}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFont{green}{\color{green}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                Capa                                    %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{titlepage}
+        \begin{center} \line(5,0){350} \end{center}
+        \begin{center} \huge{ArchC Platform Manager - Um gerenciador de simuladores de plataformas de sistemas embarcados} \end{center}
+        \begin{center} \line(5,0){350} \end{center}
+        \vspace{5cm}
+        \begin{center} \large{Instituto de computação - UNICAMP} \end{center}
+        \begin{center} Campinas, \today \end{center}
+        \vspace{3cm}
+        \begin{center} \large{Matheus Ferreira Tavares Boy} \end{center}
+        
+    \end{titlepage}
+    \tableofcontents
+    \clearpage
+    
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                Introduçãoo                            %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+    \section{Introdução}
+        %TODO
+        Estou sem inspiração para redigir a introdução. Acho que vou dormir (11/04/2012 às 04h47).
+        %----------------------------------------------------------------------------------------
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                        Conceitos básicos                        %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conceitos básicos}
+
+\subsection{\textit{ARP - ArchC Reference Platform}}
+%----------------------------------------------------------------------------------------
+A \textit{ARP} é uma ferramenta de gerenciamento de pacotes para geração de plataformas de sistemas embarcados modelados em \textit{ArchC}. Faz parte do projeto \textit{ArchC} e foi desenvolvida no Laboratório de Sistemas de Computação do Instituto de Computação da Unicamp.
+
+O objetivo principal da \textit{ARP} é organizar e facilitar a geração de plataformas. A \textit{ARP} organiza os componentes da plataforma numa estrutura de diretórios própria de modo que seja possível criar diversas conformações de plataforma sem gerar redundância entre os componentes. Isso se dá devido a uma separação física na estrutura de arquivos entre \textit{IPs}, \textit{ISs}, \textit{softwares}, processadores, \textit{wrappers} e a própria plataforma. Desse modo, cada componente é compilado apenas uma vez e utilizado pela plataforma como uma biblioteca. Tanto os componentes quanto as plataformas são descritos utilizando-se \textit{ArchC} ou \textit{SystemC}.
+
+%----------------------------------------------------------------------------------------    
+\subsection{\textit{ACPM - ArchC Platform Manager}}
+        % talvez precise de um pouco mais de trabalho nesta seção...
+A \textit{ACPM} é uma evolução e aprimoramento da \textit{ARP}. Sua proposta é facilitar a obtenção dos componentes, fazendo o \textit{download} de pacotes a partir de um repositório na web. Sendo assim, a \textit{ACPM} é uma ferramenta on-line de gerenciamento e composição de plataformas. A \textit{ACPM} engloba a \textit{ARP} e expande seu conceito, tornando-se assim uma ferramenta mais versátil e completa.
+        
+%----------------------------------------------------------------------------------------    
+\subsection{\textit{ArchC}}
+%----------------------------------------------------------------------------------------
+O \textit{ArchC} é uma ADL baseada no \textit{SystemC}, desenvolvido pelo LSC (Laboratório de Sistemas de Computaçãoo) no IC (Instituto de Computação) na Unicamp (Universidade Estadual de Campinas), que permite a descrição em alto nível de um processador, além de oferecer a geração automática de simuladores e ferramentas de desenvolvimento de software.
+%----------------------------------------------------------------------------------------
+\subsection{\textit{SystemC}}
+\textit{SystemC} é um conjunto de classes \textit{C++} e macros que fornecem um \textit{kernel} de simulação orientada a eventos em \textit{C++}. Estas instalações permitem um \textit{designer} para simular processos simultâneos, cada um descrito usando simples sintaxe \textit{C++}. Processos \textit{SystemC} podem comunicar-se em um ambiente em tempo real simulado, utilizando sinais de todos os tipos de dados oferecidos pelo \textit{C++}, algumas entidades adicionais oferecidos pela biblioteca \textit{SystemC}, além de entidades definidas pelo utilizador.
+%----------------------------------------------------------------------------------------
+\subsection{Trabalhos relacionados}
+%----------------------------------------------------------------------------------------
+\subsubsection{ESLBench}
+O ESLBench é um \textit{benchmark} entre as plataformas \textit{ARM}, \textit{Mips}, \textit{Sparc} e \textit{PowerPC}, e utilizou a mesma estrutura de organização da \textit{ARP}. Utilizou \textit{softwares} do SPLASH e do ParMiBench na sua execução. As plataformas utilizadas foram descritas em \textit{ArchC} e em \textit{SystemC}.
+        
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                O Projeto                                %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+\section{Projeto}
+O projeto é o aprimoramento contínuo da \textit{ACPM}, dando continuidade ao trabalho desenvolvido na \textit{ARP} e no gerenciador de plataforma desenvolvido pelo Matheus Nagliati. A \textit{ACPM} será expandida, desenvolvendo novas funcionalidades e aprimorando as já existentes.
+    
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                Cronograma                            %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cronograma}
+O projeto terá duração de 1 ano. 
+
+%----------------------------------------------------------------------------------------
+\subsection{Publicação}
+O projeto resultará na publicação de um artigo sobre a \textit{ACPM}, além da divulgação do próprio gerenciador de plataforma.
+%----------------------------------------------------------------------------------------
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                        Sobre o candidato                        %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sobre o candidato}
+Meu chamo Matheus Ferreira Tavares Boy, ingressei em 2010 na Unicamp no curso de Engenharia de Computação. Tive 3 reprovações até agora, no primeiro e no terceiro semestre. Reprovei em Física I, Física II e Geometria Analítica. Contudo, são disciplinas do primeiro ano de curso, e atribuo as reprovações a questões na adaptação à vida universitária. Além disso, ressalto que vou bem na parte específica de computação do curso, sem ter tido reprovações nestas disciplinas, e obtendo notas acima da média da turma na maioria das disciplinas de computação.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                Bibliografia                            %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\bibliographystyle{plain}
+%\bibliography{./bib/borin2004estimedia,./bib/baldassin2005sbac,./bib/azevedo2005ijpp.bib,./bib/rigo2004sbac}
+
+
+\end{document}

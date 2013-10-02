@@ -1,0 +1,430 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage [utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{makeidx}
+\usepackage[usenames]{color}
+\newcommand{\todo}[1]{\textcolor{red}{\footnote{\textcolor{red}{TODO: #1}}}}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{lmodern}
+\usepackage{indentfirst}
+\usepackage{array}
+
+%%% usado para codigo %%%
+\usepackage{listings}
+\lstset{
+%  language = C,
+  basicstyle=\footnotesize\ttfamily, 
+  numbers=left,               
+  numberstyle=\tiny,         
+  %stepnumber=2,              
+  numbersep=5pt,             
+  tabsize=2,                  
+  extendedchars=true,  
+  breaklines=true,       
+  keywordstyle=\color{blue},
+%  frame=b,         
+  stringstyle=\color{green}\ttfamily, 
+  showspaces=false,          
+  showtabs=false,             
+  xleftmargin=17pt,
+  framexleftmargin=17pt,
+  framexrightmargin=5pt,
+  framexbottommargin=4pt,
+  %backgroundcolor=\color{lightgray},
+  showstringspaces=false              
+}
+\lstloadlanguages{C}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFont{green}{\color{green}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                Capa                                    %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{titlepage}
+        \begin{center} \line(5,0){350} \end{center}
+        \begin{center} \huge{ArchC Platform Manager \\ Um gerenciador de pacotes para plataformas de sistemas embarcados} \end{center}
+        \begin{center} \line(5,0){350} \end{center}
+        \vspace{5cm}
+        \begin{center} \large{Instituto de computação - UNICAMP} \end{center}
+        \begin{center} Campinas, \today \end{center}
+        \vspace{3cm}
+        \begin{center} \large{Matheus Ferreira Tavares Boy} \end{center}
+        
+    \end{titlepage}
+    \tableofcontents
+    \clearpage
+    
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                Introduçãoo                            %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+<<<<<<< .mine
+\section{Introdução}
+A complexidade de projetos ESL e a necessidade de melhorar a performance de tais projetos tornam a modelagem e simulação de sistemas em alto nível de abstração uma importante área de pesquisa. Os trabalhos nessa área são caracterizados pela modelagem de componentes do sistema, de mecanismos de comunicação e sincronização entre componentes, desenvolvimento de novas metodologias e técnicas para aumento de performance e das aplicações que serão executadas.
+% TODO: "encher mais linguiça"
+=======
+\section{Introdução}
+
+Este projeto visa atualizar e incrementar o atual gerenciador de
+componentes de plataformas utilizado no projeto ArchC. Atualmente o
+gerenciador de plataformas é denominado ARP e pretendemos com a nova
+versão, que será chamada de ACPM, incluir as seguintes
+funcionalidades:
+
+\begin{enumerate}
+\item Suporte a repositórios remotos, de forma a facilitar a busca por
+  componentes para novas plataformas. Ao incluir esta funcionalidade,
+  integraremos um conjunto de componentes já existentes na criação de
+  um repositório global.
+
+\item Melhor empacotamento dos componentes, de forma a facilitar tanto
+  a identificação quanto o processo de busca individual. Atualmente a
+  ARP só permite buscar uma plataforma inteira, pretende-se que seja
+  possível buscar apenas um periférico.
+
+\item Suporte à instalação de ferramentas na estrutura do ACPM,
+  incluindo \textit{scripts} de instalação, facilitando o trabalho dos
+  usuários do sistema.
+
+\item Criar uma interface gráfica via web para utilização tanto do
+  gerenciador de pacotes quanto também para gerar o arquivo principal
+  das novas plataformas.
+
+\item Suporte no desenvolvimento do ESLBench, um benchmark de
+  plataformas que está sendo desenvolvido no LSC, pela aluna de
+  doutorado Liana Duenha. O candidato deste projeto já está
+  trabalhando deste o início deste ano em funcionalidades de
+  integração do ESLBench.
+
+\end{enumerate}
+>>>>>>> .r7
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                        Conceitos básicos                        %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conceitos básicos}
+
+Esta seção descreve os conceitos básicos necessários para o
+desenvolvimento deste projeto. Uma definição que se faz importante no
+primeiro momento é o conceito de plataforma. No contexto deste
+projeto, uma plataforma é um conjunto de componentes de hardware que
+incluem, no mínimo, um processador e um periférico, preferencialmente
+tendo vários periféricos interligados e também algum mecanismo de
+interconexão entre eles (barramento, NoC, etc). A existência de um
+processador garante que a plataforma seja programável e, portanto,
+possa ter uma finalidade mais genérica, onde cada software diferente
+pode especializa-la para um uso distinto.
+
+\subsection{\textit{ARP - ArchC Reference Platform}}
+%----------------------------------------------------------------------------------------
+A \textit{ARP}\todo{Referência} é uma ferramenta de gerenciamento de pacotes para
+geração de plataformas de sistemas embarcados modelados em
+\textit{ArchC}\todo{Referência}. Faz parte do projeto \textit{ArchC} e foi desenvolvida
+no Laboratório de Sistemas de Computação do Instituto de Computação da
+Unicamp.
+
+O objetivo principal da \textit{ARP} é organizar e facilitar a geração
+de plataformas. A \textit{ARP} organiza os componentes da plataforma
+numa estrutura de diretórios própria de modo que seja possível criar
+diversas conformações de plataforma sem gerar redundância entre os
+componentes. Desse modo,
+cada componente é compilado apenas uma vez e utilizado pela plataforma
+como uma biblioteca. Tanto os componentes quanto as plataformas são
+descritos utilizando-se \textit{ArchC} ou \textit{SystemC}\todo{Referência}.
+
+Isso se dá devido a uma separação física na estrutura de
+arquivos entre:
+
+\begin{description}
+\item{Processadores:} Neste diretório ficam os processadores que podem
+  ser utilizados nas plataformas. Mesmo que seja necessário modelar um
+  sistema multi-core, apenas uma cópia do processador será compilada e
+  a biblioteca será instanciada o número de vezes necessário.
+
+\item{IS:} Neste diretório ficam os componentes que fazerm a
+  interligação entre os demais componentes de hardware do sistema
+  (\textit{Interconection Structures}). Normalmente são barramentos,
+  NoCs ou roteadores. Alguns destes componentes precisam ser
+  especializados estaticamente com o mapeamento de endereços da
+  plataforma.
+
+\item{\textit{Wrappers}:} Estes são os componentes que fazem a
+  conversão de protocolos de comunicação entre os demais módulos da
+  plataforma. Uma conversão de protocolo pode incluir a mudança no
+  nível de abstração da comunicação (uma versão comportamental se
+  comunicando com uma RTL).
+
+\item{IP:} Estes são os periféricos em geral da
+  plataforma, os demais módulos de hardware necessários.
+
+\item{Software:} Este diretório terá todos os softwares que podem
+  executar nas plataformas. Não é obrigatório que qualquer software
+  possa ser executado em qualquer plataforma, apenas que eles fiquem
+  num ponto específico da estrutura de diretórios para facilitar a
+  compilação.
+
+\item{Platform:} Esta é a pasta que contém o arquivo principal da
+  plataforma, indicando os componentes necessários para execução e
+  também interligando-os da forma desejada. É neste diretório que é
+  montado o executável da plataforma.
+
+\end{description}
+
+%----------------------------------------------------------------------------------------    
+\subsection{\textit{ACPM - ArchC Platform Manager}}
+
+A \textit{ACPM} é uma evolução e aprimoramento da \textit{ARP}. Sua
+proposta é facilitar a obtenção dos componentes, fazendo o
+\textit{download} de pacotes a partir de um repositório na web. Sendo
+assim, a \textit{ACPM} é uma ferramenta on-line de gerenciamento e
+composição de plataformas. A \textit{ACPM} engloba a \textit{ARP} e
+expande seu conceito, tornando-se assim uma ferramenta mais versátil e
+completa.
+
+Pretende-se neste projeto dar suporte a mais de um repositório, de
+forma que os desenvolvedores tenham a flexibilidade de manter versões
+diferentes dos componentes (interna e externa) e também utilizar os
+componentes de outros usuários do ACPM.
+
+A mudança de nome se deve principalmente pelo fato de já existir um
+comando nativo no Linux chamado ARP. Este conflito de nomes já causou
+problemas de entendimento e execuções incorretas na versão atual,
+sucitando a necessidade de um outro nome.
+        
+%----------------------------------------------------------------------------------------    
+\subsection{\textit{ArchC}}
+%----------------------------------------------------------------------------------------
+O \textit{ArchC} é uma Linguagem de Descrição de Arquitetura baseada
+no \textit{SystemC}, desenvolvido pelo LSC (Laboratório de Sistemas de
+Computaçãoo) no IC (Instituto de Computação) na Unicamp (Universidade
+Estadual de Campinas), que permite a descrição em alto nível de um
+processador, além de oferecer a geração automática de simuladores e
+ferramentas de desenvolvimento de software.
+
+Os simuladores gerados por ArchC podem ser utilizados tanto em
+sistemas isolados quanto em plataformas. O foco deste projeto é
+utilizar os processadores já existentes no ArchC.
+
+%----------------------------------------------------------------------------------------
+\subsection{\textit{SystemC}}
+
+\textit{SystemC} é um conjunto de classes \textit{C++} e macros que
+fornecem um \textit{kernel} de simulação orientada a eventos em
+\textit{C++}. SystemC permite a um projetista simular processos
+simultâneos, cada um descrito usando simples sintaxe
+\textit{C++}. Processos \textit{SystemC} podem comunicar-se em um
+ambiente em tempo real simulado, utilizando sinais de todos os tipos
+de dados oferecidos pelo \textit{C++}, algumas entidades adicionais
+oferecidos pela biblioteca \textit{SystemC}, além de entidades
+definidas pelo utilizador.
+
+Todos os simuladores gerados por ArchC são codificados em SystemC e
+todas os componentes das plataformas também o são.
+%----------------------------------------------------------------------------------------
+\subsection{ESLBench}
+O ESLBench é um \textit{benchmark} de plataformas que está sendo
+desenvolvido no LSC. As plataformas podem utilizar os processadores
+MIPS, PowerPC, SPARC e ARM, além de periféricos comuns entre os
+componentes. A versão em desenvolvimento do ESLBench possui softwares
+do benchmark SPLASH-2\cite{splash2}, do ParMiBench\todo{Referência} e
+também do MiBench\todo{Referência}. As plataformas são descritas em
+ArchC e SystemC.
+
+O ESLBench será o primeiro grande projeto a fazer uso do
+ACPM e o candidato a esta bolsa PIBIC já se encontra trabalhando no
+desenvolvimento do ESLBench.
+
+        
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                O Projeto                                %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+\section{Projeto}
+O projeto é o aprimoramento contínuo do \textit{ACPM}, dando
+continuidade ao trabalho desenvolvido no \textit{ARP} e no gerenciador
+de plataforma desenvolvido pelo Matheus Nagliati. O \textit{ACPM} será
+expandido, desenvolvendo novas funcionalidades e aprimorando as já
+existentes. A principal motivação é transformar o \textit{ACPM} num
+gerenciador de pacotes similar ao utilizado em distribuições linux, 
+embora voltado para as plataformas de sistemas embarcados. Tendo isso
+em mente, podemos estabelecer alguns objetivos principais:
+
+\begin{itemize}
+\item Aglutinação de componentes num repositório central
+\item Suporte a múltiplos repositórios, incluindo uma escala de prioridade dentre os mesmos
+\item Suporte a ferramentas, como \textit{cross-compilers} e \textit{debuggers}
+\item Criação de uma interface web local para criação de plataformas \textit{on-line} - \textit{WebACPM}
+\end{itemize}
+
+\subsection{Aglutinação de componentes}
+Esta é a função principal do ACPM, garantir que os pacotes estejam
+disponíveis e possam ser baixados por quem necessitar. Desta forma,
+através de comandos \textit{get} e \textit{put} será possível buscar
+do servidor os componentes necessários para montar uma nova plataforma
+localmente permitindo a composição de plataformas distintas.
+
+Contudo, vale ressaltar que a proposta deste projeto não é gerar os
+componentes, apenas coletar os já existentes e org permitir o suporte a repositórios
+remotos, melhor empacotamento dos componentes, suporte a ferramentas distintas
+anizá-los perante as
+diretrizes propostas pelo \textit{ACPM}.
+
+\subsection{Múltiplos repositórios}
+A \textit{ACPM} trabalha buscando os componentes desejados num
+repositório na web. Contudo, a existência de apenas um repositório
+implica em uma série de questões e pontos críticos. Por exemplo, caso
+o servidor do repositório fique fora do ar, o acesso aos pacotes
+ficaria suspenso até que a situação do servidor fosse
+normalizada. Outro quesito importante é ter a possibilidade de
+organizar um repositório local para uma equipe de desenvolvimento que
+também pode querer distribuir alguns de seus componentes num
+repositório global.
+
+A solução para essas questões é a utilização de vários
+repositórios, compondo uma árvore de prioridades. Desse modo, a
+exigência sobre os repositórios seria distribuída, o que tornaria o
+\textit{ACPM} mais robusto, já que existiriam mais possibilidades para
+a busca e obtenção dos componentes requisitados. Além disso, podem
+existir repositórios ``não-oficias'' com componentes criados pelos
+próprios usuários e estes podem ser adicionados à listagem de
+repositórios locais da \textit{ACPM}.
+
+Em suma, a existência de múltiplos repositórios tornará o
+\textit{ACPM} mais próximo da proposta de funcionar como um
+gerenciador de pacotes de uma distribuição linux.
+
+\subsection{Suporte a ferramentas}
+O objetivo principal do \textit{ACPM} é realizar a gestão dos
+componentes para a geração de plataformas de sistemas embarcados. Um
+objetivo secundário será a gestão das ferramentas para a simulação
+dessas plataformas.
+
+Existe uma série de pré-requisitos a serem atendidos de modo que se
+possa rodar uma plataforma descrita em \textit{ArchC}. O \textit{ACPM}
+deve verificar a existência desses pré-requisitos e fazer o download e
+instalação dos mesmos, caso não estejam sendo atendidos. Ou seja, o
+\textit{ACPM} verificaria se existe o \textit{ArchC}, o
+\textit{SystemC}, \textit{TLM} e os \textit{cross-compilers}
+apropriados e, caso exista alguma insuficiência, ela seria resolvida.
+
+\subsection{\textit{WebACPM}}
+O \textit{WebACPM} tem como meta ser uma interface web local, para ser
+utiizada através de um navegador de internet, que deve permitir a
+geração de plataformas em modo gráfico, facilitando a interligação de
+seus componentes e também o melhor uso dos comandos existentes,
+evitando as versões de linha de comando. Além
+de gerar plataformas, o \textit{WebACPM} deve fazer a gestão dos componentes
+locais e também possibilitar a obtenção de novos componentes. Em
+última análise, o \textit{WebACPM} será a interface gráfica para o
+\textit{ACPM}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%                                Cronograma                            %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cronograma}
+
+A Tabela \ref{tab:cronograma} mostra o cronograma para um ano de
+projeto, separado em metas trimestrais. É importante destacar que o
+candidato já está trabalhando desde fevereiro de 2012 no projeto e já
+domina o código da versão atual da ARP, além de participar ativamente
+da definição do ACPM e do ESLBench. O candidato tem participado de
+duas reuniões de projeto por semana e também tem iteragido com a
+doutoranda Liana Duenha, que participa do mesmo laboratório.
+
+\begin{table}[htbp]
+\begin{center}
+  \begin{tabular}{cc|m{6cm}|m{6cm}|}
+    \cline{3-4}
+    & & \multicolumn{1}{|c|}{Atividades} & \multicolumn{1}{c|}{Metas}  \\ \cline{1-4}
+
+    \multicolumn{1}{|c||}{\multirow{4}{*}{ \begin{sideways} Um ano de
+          Iniciação Científica \end{sideways}}} & 
+    \multicolumn{1}{|m{0.3cm}||}{ \begin{sideways} 1º trimestre \ \end{sideways}}
+    & % Atividades do 1 trimestre
+    \textbullet Conversão do código do ARP para ACPM e inclusão de
+    suporte a: múltiplos repositórios, formatos de arquivos zip.
+
+    \textbullet Coleta de componentes para o repositório central.
+    & % Metas do 1 trimestre
+    \textbullet Lançamento da primeira versão do ACPM.
+    \\ \cline{2-4} 
+
+    \multicolumn{1}{|c||}{} &
+    \multicolumn{1}{|m{0.3cm}||}{\begin{sideways} 2º trimestre \ \end{sideways}}
+    & % Atividades do 2 trimestre
+    \textbullet Integração do ESLBench dentro do ACPM e inclusão de
+    novas funcionalidades para dar suporte ao benchmark.
+    
+    & % Metas do 2 trimestre
+    \textbullet Distribuição do ESLBench através do ACPM.
+
+    \textbullet Relatório Parcial de Atividades.
+    \\ \cline{2-4} 
+
+    \multicolumn{1}{|c||}{} &
+    \multicolumn{1}{|m{0.3cm}||}{\begin{sideways} 3º trimestre \ \end{sideways}}
+    & % Atividades do 3 trimestre
+    \textbullet Suporte a ferramentas dentro do ACPM.
+    
+    & % Metas do 3 trimestre
+    \textbullet Inclusão de ferramentas no repositório do ACPM. \\ \cline{2-4} 
+ 
+   \multicolumn{1}{|c||}{} & \multicolumn{1}{|m{0.3cm}||}{\begin{sideways} 4º trimestre  \ \end{sideways}}
+    & % Atividades do 4 trimestre
+    \textbullet Desenvolvimento do WebACPM.
+    
+    & % Metas do 4 trimestre
+    \textbullet Distribuição do WebACPM no repositório, como uma ferramenta.
+    
+    \textbullet Relatório final. \\ \cline{1-4}
+  \end{tabular}
+  \caption{Cronograma do projeto}
+  \label{tab:cronograma}
+\end{center}
+\end{table}
+-------------------------------------------------------------------------------------
+\subsection{Publicação}
+Além da apresentação no Congresso de Iniciação Científica da Unicamp,
+pretende-se ao final deste projeto, enviar um artigo científico sobre
+o ACPM para um fórum nacional da área.
+%----------------------------------------------------------------------------------------
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                        Sobre o candidato                        %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sobre o candidato}
+Meu chamo Matheus Ferreira Tavares Boy, ingressei em 2010 na Unicamp
+no curso de Engenharia de Computação. Tive 3 reprovações até agora, no
+primeiro e no terceiro semestre. Reprovei em Física I, Física II e
+Geometria Analítica. Contudo, são disciplinas do primeiro ano de
+curso, e atribuo as reprovações a questões na adaptação à vida
+universitária. Além disso, ressalto que vou bem na parte específica de
+computação do curso, sem ter tido reprovações nestas disciplinas, e
+obtendo notas acima da média da turma na maioria das disciplinas de
+computação.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                Bibliografia                            %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{plain}
+\bibliography{projeto}
+
+\end{document}

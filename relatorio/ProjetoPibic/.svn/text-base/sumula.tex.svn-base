@@ -1,0 +1,164 @@
+\documentclass[11pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig}
+\usepackage{setspace}
+\usepackage{setspace}
+\usepackage{float}
+
+\oddsidemargin 0pt  % was 38
+\evensidemargin 0pt % was 38
+\marginparwidth 0pt % was 68
+
+\topmargin 30pt   % was 27
+\headheight 0pt  % was 12
+\headsep 0pt     % was 25
+%\footheight 0pt  % was 12
+\footskip 30pt   % was 30
+
+\textwidth 470pt      % was 390pt
+\textheight 620.5pt  % was 536.5
+
+\floatstyle{ruled}
+\newfloat{algoritmo}{thp}{loa}
+\floatname{algoritmo}{Algoritmo}
+ 
+\input{abaco.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{minipage}[tl]{31mm}
+  \ABACO{1}{9}{6}{9}{1}
+\end{minipage}
+\hspace*{3mm}
+\begin{minipage}[tl]{12cm}
+  \begin{center}
+    {
+      {\Large Laboratório de Sistemas de Computação \\
+        Departamento de Sistemas de Computação \\ 
+        Instituto de Computação \\
+        Universidade Estadual de Campinas}
+    }
+  \end{center}
+\end{minipage}
+
+{\LARGE
+  \begin{center}
+      \textbf{Súmula Curricular}
+
+      \textbf{Rodolfo Jardim de Azevedo - MS-5}
+
+  \end{center}
+}
+
+\section{Produção Científica}
+
+\subsection{Publicações (10 mais importantes relacionadas ao tema)}
+
+\begin{enumerate}
+
+
+\item Garcia, Maxiwell; Rigo, Sandro; Azevedo, Rodolfo. Optimizing a
+  Retargetable Compiled Simulator to Achieve Near-Native
+  Performance. In: Simpósio de Sistemas Computacionais - WSCAD-SSC,
+  2010, Petrópolis. WSCAD-SSC 2010 - Simpósio de Sistemas
+  Computacionais, 2010.
+
+\item Leonardo Ecco; Bruno Lopes; Pannain, Ricardo; Centoducatte,
+  Paulo Cesar; Azevedo, Rodolfo . SPARC16: A New Compression Approach
+  for the SPARC Architecture. In: International Symposium on Computer
+  Architecture and High-Performance Computing - SBAC-PAD, 2009, São
+  Paulo. Proceedings of International Symposium on Computer
+  Architecture and High Performance Computing - SBAC-PAD,
+  2009. p. 169-176.
+
+\item Klein, Felipe Vieira; Leão, R.; Araújo, Guido Costa Souza de;
+  Santos, Luiz Cláudio Villar dos; Azevedo, Rodolfo. A Multi-Model
+  Engine for High-Level Power Estimation Accuracy Optimization. IEEE
+  Transactions on Very Large Scale Integration Systems, v. 17,
+  p. 660-673, 2009.
+  
+\item Baldassin, A.; Klein, Felipe Vieira; Centoducatte, Paulo Cesar;
+  Azevedo, Rodolfo; Araújo, Guido Costa Souza de. Characterizing the
+  Energy Consumption of Software Transactional Memory. IEEE Computer
+  Architecture Letters, v. 8, p. 1-4, 2009.
+
+\item Santos, Ricardo Ribeiro dos; Batistella, Rafael Fernandes;
+  Azevedo, Rodolfo. A Pattern Based Instruction Encoding Technique for
+  High Performance Architectures. International Journal of High
+  Performance Systems Architecture (Print), v. 2, p. 71-80, 2009.
+
+\item Azevedo, Rodolfo; Rigo, Sandro; Bartholomeu, Marcus; Araújo,
+  Guido Costa Souza de; Araújo, Cristiano; Barros, Edna. The ArchC
+  Architecture Description Language and Tools. International Journal
+  of Parallel Programming, v. 33, n. 5, p. 453-484, 2005.
+
+\item Rigo, Sandro; Araújo, Guido Costa Souza de; Bartholomeu, Marcus;
+  Azevedo, R. J.. ArchC: A SystemC-Based Architecture Description
+  Language. In: 16th Symposium on Computer Architecture and High
+  Performance Computing, 2004, Foz do Iguaçu. SBAC-PAD'04,
+  2004. p. 66-73.
+
+\item Bartholomeu, M.; Azevedo, R. J.; Rigo, Sandro; Araújo, Guido
+  Costa Souza de. Optimizations for compiled simulation using
+  instruction type information. In: 16th Symposium on Computer
+  Architecture and High Performance Computing, 2004, Foz do
+  Iguaçu. SBAC-PAD'04, 2004. p. 74-81.
+
+\item Rigo, Sandro; Juliato, M. R.; Azevedo, R. J.; Araújo, Guido
+  Costa Souza de; Centoducatte, Paulo Cesar. Teaching Computer
+  Architecture Using an Architecture Description Language. In:
+  Workshop on Computer Architecture Education, 2004, Munich. Workshop
+  on Computer Architecture Education, 2004. p. 22-28.
+  
+\item Borin, E.; Klein, Felipe Vieira; Moreano, N. B.; Azevedo, R. J.;
+  Araújo, Guido Costa Souza de. Fast Instruction Set
+  Customization. In: 2nd Workshop on Embedded Systems for Real-Time
+  Multimedia, 2004, Estocolmo. ESTIMedia 2004, 2004.
+ 
+\end{enumerate}
+
+\subsection{Resumo}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|l|r|}
+\hline
+Item & Quantidade \\ \hline \hline
+Livros Publicados & 1 \\ \hline
+Publicações em Periódicos com Seletiva Política Editorial & 9 \\
+\hline
+Capítulos de Livros & 2 \\ \hline
+Artigos em Conferências & 45 \\ \hline
+Dissertações de Mestrado Orientadas e já defendidas & 20 \\ \hline
+Teses de Doutorado Orientadas e já defendidas & 3 \\ \hline
+Teses de Doutorado Co-Orientadas e já defendidas & 2 \\ \hline
+
+  \end{tabular}
+  \label{tab:resumo}
+\end{table}
+
+\section{Atividades Atuais}
+
+\subsection{Auxílios à Pesquisa Vigentes}
+
+\begin{itemize}
+\item  Projeto Universal do CNPq - 2010 sob coordenação do Prof. Guido Araújo.
+\end{itemize}
+
+\section{Outras Informações}
+
+A partir de setembro/2006 recebi uma bolsa de Produtividade em
+Pesquisa nível 2 do CNPq.
+
+No momento acabo de retornar de um período sabático na Universidade de
+Washington, EUA. Justamente pelo afastamento, no momento não tenho
+nenhum projeto com financiamento ativo como coordenador. Estou
+trabalhando para submeter projetos nas próximas chamadas do CNPq e
+também para a FAPESP, no meio de 2012.
+
+
+\end{document}
+

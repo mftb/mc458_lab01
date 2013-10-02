@@ -1,0 +1,100 @@
+@inproceedings{Woo:1995:SPC:223982.223990,
+ author = {Woo, Steven Cameron and Ohara, Moriyoshi and Torrie, Evan and Singh, Jaswinder Pal and Gupta, Anoop},
+ title = {The SPLASH-2 programs: characterization and methodological considerations},
+ booktitle = {Proceedings of the 22nd annual international symposium on Computer architecture},
+ series = {ISCA '95},
+ year = {1995},
+ isbn = {0-89791-698-0},
+ location = {S. Margherita Ligure, Italy},
+ pages = {24--36},
+ numpages = {13},
+ url = {http://doi.acm.org/10.1145/223982.223990},
+ doi = {10.1145/223982.223990},
+ acmid = {223990},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+
+@ARTICLE{archc,
+  author = {Azevedo, Rodolfo and Rigo, Sandro and Bartholomeu, Marcus and Araujo,
+	Guido and Araujo, Cristiano and Barros, Edna},
+  title = {The ArchC Architecture Description Language and Tools},
+  journal = {International Journal of Parallel Programming},
+  year = {2005},
+  volume = {33},
+  pages = {453-484},
+  note = {10.1007/s10766-005-7301-0},
+  abstract = {This paper presents an architecture description language (ADL) called
+	ArchC, which is an open-source SystemC-based language that is specialized
+	for processor architecture description. Its main goal is to provide
+	enough information, at the right level of abstraction, in order to
+	allow users to explore and verify new architectures, by automatically
+	generating software tools like simulators and co-verification interfaces.
+	ArchC’s key features are a storage-based co-verification mechanism
+	that automatically checks the consistency of a refined ArchC model
+	against a reference (functional) description, memory hierarchy modeling
+	capability, the possibility of integration with other SystemC IPs
+	and the automatic generation of high-level SystemC simulators and
+	assemblers. We have used ArchC to synthesize both functional and
+	cycle-based simulators for the MIPS and Intel 8051 processors, as
+	well as functional models of architectures like SPARC V8, TMS320C62x,
+	XScale and PowerPC.},
+  issn = {0885-7458},
+  issue = {5},
+  keyword = {Computer Science},
+  publisher = {Springer Netherlands},
+  url = {http://dx.doi.org/10.1007/s10766-005-7301-0}
+}
+
+@inproceedings{arp,
+ author = {Azevedo, Rodolfo and Albertini, Bruno and Rigo, Sandro},
+ title = {ARP: Um Gerenciador de Pacotes para Sistemas Embarcados com Processadores Modelados em ArchC},
+ booktitle = {Workshop de Sistemas Embarcados - WSE},
+ year = {2010},
+ location = {Gramado},
+ publisher = {SBC},
+ note = {In Portuguese},
+ }
+
+@article{parmibench,
+author = {Syed Muhammad Zeeshan Iqbal and Yuchen Liang and Hakan Grahn},
+title = {ParMiBench - An Open-Source Benchmark for Embedded Multiprocessor Systems},
+journal ={IEEE Computer Architecture Letters},
+volume = {9},
+issn = {1556-6056},
+year = {2010},
+pages = {45-48},
+doi = {http://doi.ieeecomputersociety.org/10.1109/L-CA.2010.14},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+}
+
+
+@inbook{mibench, title={MiBench: A free, commercially representative embedded benchmark suite}, volume={131}, url={http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=990739}, booktitle={Proceedings of the Fourth Annual IEEE International Workshop on Workload Characterization WWC4 Cat No01EX538}, publisher={Ieee}, author={Guthaus, M R and Ringenberg, J S and Ernst, D and Austin, T M and Mudge, T and Brown, R B}, year={2001}, pages={3--14}}
+
+@article{parsec-splash, title={PARSEC vs. SPLASH-2: A quantitative comparison of two multithreaded benchmark suites on Chip-Multiprocessors}, url={http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=4636090}, number={March}, journal={2008 IEEE International Symposium on Workload Characterization}, publisher={Ieee}, author={Bienia, Christian and Kumar, Sanjeev}, year={2008}, pages={47--56}}
+
+@techreport{TR-IC-03-15,
+  number = {IC-03-15},
+  author = {Sandro Rigo and Rodolfo J. Azevedo and Guido Araujo},
+  title = {The {ArchC} Architecture Description Language},
+  month = {June},
+  year = {2003}, 
+  institution = {Institute of Computing, University of Campinas},
+}
+
+@INPROCEEDINGS{Rigo2004SBAC,
+author={Rigo, S. and Araujo, G. and Bartholomeu, M. and Azevedo, R.},
+booktitle={16th Symposium on Computer Architecture and High Performance Computing, 2004 - SBAC-PAD 2004}, 
+title={ArchC: a systemC-based architecture description language},
+year={2004},
+month=oct.,
+volume={},
+number={},
+pages={ 66 - 73},
+keywords={ formal verification; high level synthesis; instruction set; open-source SystemC-based language; processor architecture description language; computer architecture; electronic design automation; formal verification; hardware description languages; high level synthesis; instruction sets; logic testing;},
+doi={10.1109/SBAC-PAD.2004.8},
+ISSN={1550-6533 },
+note={Best Paper Award},
+}

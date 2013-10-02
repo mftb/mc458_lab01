@@ -1,0 +1,72 @@
+\begin{thebibliography}{10}
+
+\bibitem{azevedo2010wse}
+Rodolfo Azevedo, Bruno Albertini, and Sandro Rigo.
+\newblock Arp: Um gerenciador de pacotes para sistemas embarcados com
+  processadores modelados em archc.
+\newblock In {\em Workshop de Sistemas Embarcados - WSE}. SBC, 2010.
+\newblock In Portuguese.
+
+\bibitem{springerlink:10.1007/s10766-005-7301-0}
+Rodolfo Azevedo, Sandro Rigo, Marcus Bartholomeu, Guido Araujo, Cristiano
+  Araujo, and Edna Barros.
+\newblock The archc architecture description language and tools.
+\newblock {\em International Journal of Parallel Programming}, 33:453--484,
+  2005.
+\newblock 10.1007/s10766-005-7301-0.
+
+\bibitem{bienia2008parsec}
+Christian Bienia, Sanjeev Kumar, Jaswinder~Pal Singh, and Kai Li.
+\newblock The parsec benchmark suite: characterization and architectural
+  implications.
+\newblock In {\em Proceedings of the 17th international conference on Parallel
+  architectures and compilation techniques}, pages 72--81. ACM, 2008.
+
+\bibitem{clemons2011mevbench}
+Jason Clemons, Haishan Zhu, Silvio Savarese, and Todd Austin.
+\newblock Mevbench: A mobile computer vision benchmarking suite.
+\newblock In {\em Workload Characterization (IISWC), 2011 IEEE International
+  Symposium on}, pages 91--102. IEEE, 2011.
+
+\bibitem{guthaus2001mibench}
+Matthew~R Guthaus, Jeffrey~S Ringenberg, Dan Ernst, Todd~M Austin, Trevor
+  Mudge, and Richard~B Brown.
+\newblock Mibench: A free, commercially representative embedded benchmark
+  suite.
+\newblock In {\em Workload Characterization, 2001. WWC-4. 2001 IEEE
+  International Workshop on}, pages 3--14. IEEE, 2001.
+
+\bibitem{iqbal2010parmibench}
+Syed Muhammad~Zeeshan Iqbal, Yuchen Liang, and H{\aa}kan Grahn.
+\newblock Parmibench-an open-source benchmark for embedded multiprocessor
+  systems.
+\newblock {\em Computer Architecture Letters}, 9(2):45--48, 2010.
+
+\bibitem{lee1997mediabench}
+Chunho Lee, Miodrag Potkonjak, and William~H Mangione-Smith.
+\newblock Mediabench: a tool for evaluating and synthesizing multimedia and
+  communicatons systems.
+\newblock In {\em Proceedings of the 30th annual ACM/IEEE international
+  symposium on Microarchitecture}, pages 330--335. IEEE Computer Society, 1997.
+
+\bibitem{liao2002system}
+Stan Liao, Grant Martin, Stuart Swan, and Thorsten Gr{\"o}tker.
+\newblock {\em System design with SystemC}.
+\newblock Kluwer Academic Pub, 2002.
+
+\bibitem{Rigo2004SBAC}
+S.~Rigo, G.~Araujo, M.~Bartholomeu, and R.~Azevedo.
+\newblock Archc: a systemc-based architecture description language.
+\newblock In {\em 16th Symposium on Computer Architecture and High Performance
+  Computing, 2004 - SBAC-PAD 2004}, pages 66 -- 73, 2004.
+\newblock Best Paper Award.
+
+\bibitem{woo1995splash}
+Steven~Cameron Woo, Moriyoshi Ohara, Evan Torrie, Jaswinder~Pal Singh, and
+  Anoop Gupta.
+\newblock The splash-2 programs: Characterization and methodological
+  considerations.
+\newblock In {\em ACM SIGARCH Computer Architecture News}, volume~23, pages
+  24--36. ACM, 1995.
+
+\end{thebibliography}

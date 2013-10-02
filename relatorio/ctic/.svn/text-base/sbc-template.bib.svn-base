@@ -1,0 +1,56 @@
+@ARTICLE{springerlink:10.1007/s10766-005-7301-0,
+  author = {Azevedo, Rodolfo and Rigo, Sandro and Bartholomeu, Marcus and Araujo,
+	Guido and Araujo, Cristiano and Barros, Edna},
+  title = {The ArchC Architecture Description Language and Tools},
+  journal = {International Journal of Parallel Programming},
+  year = {2005},
+  volume = {33},
+  pages = {453-484},
+  note = {10.1007/s10766-005-7301-0},
+  abstract = {This paper presents an architecture description language (ADL) called
+	ArchC, which is an open-source SystemC-based language that is specialized
+	for processor architecture description. Its main goal is to provide
+	enough information, at the right level of abstraction, in order to
+	allow users to explore and verify new architectures, by automatically
+	generating software tools like simulators and co-verification interfaces.
+	ArchC’s key features are a storage-based co-verification mechanism
+	that automatically checks the consistency of a refined ArchC model
+	against a reference (functional) description, memory hierarchy modeling
+	capability, the possibility of integration with other SystemC IPs
+	and the automatic generation of high-level SystemC simulators and
+	assemblers. We have used ArchC to synthesize both functional and
+	cycle-based simulators for the MIPS and Intel 8051 processors, as
+	well as functional models of architectures like SPARC V8, TMS320C62x,
+	XScale and PowerPC.},
+  issn = {0885-7458},
+  issue = {5},
+  keyword = {Computer Science},
+  publisher = {Springer Netherlands},
+  url = {http://dx.doi.org/10.1007/s10766-005-7301-0}
+}
+
+@inproceedings{azevedo2010wse,
+ author = {Azevedo, Rodolfo and Albertini, Bruno and Rigo, Sandro},
+ title = {ARP: Um Gerenciador de Pacotes para Sistemas Embarcados com Processadores Modelados em ArchC},
+ booktitle = {Workshop de Sistemas Embarcados - WSE},
+ year = {2010},
+ location = {Gramado},
+ publisher = {SBC},
+ note = {In Portuguese},
+ }
+
+
+@INPROCEEDINGS{Rigo2004SBAC,
+author={Rigo, S. and Araujo, G. and Bartholomeu, M. and Azevedo, R.},
+booktitle={16th Symposium on Computer Architecture and High Performance Computing, 2004 - SBAC-PAD 2004}, 
+title={ArchC: a SystemC-based architecture description language},
+year={2004},
+month=oct.,
+volume={},
+number={},
+pages={ 66 - 73},
+keywords={ formal verification; high level synthesis; instruction set; open-source SystemC-based language; processor architecture description language; computer architecture; electronic design automation; formal verification; hardware description languages; high level synthesis; instruction sets; logic testing;},
+doi={10.1109/SBAC-PAD.2004.8},
+ISSN={1550-6533 },
+note={Best Paper Award},
+}

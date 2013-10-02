@@ -11,44 +11,50 @@ void bubble(int*,int,int);
 int main(){
     std::clock_t start;
     double duration;
-    /* Your algorithm here */
     int v[MAX]; 
-    int original[MAX];
-    int i,j,k,n,count;
+    //int original[MAX];
+    int i,n;
+    //int j,k,count;
+    
+    //count=0;
     // reading data from stdin
-    count=0;
+    // scans the whole file until EOF
     while(scanf("%d, ", &n)!=EOF){
     for(i=0;i<n-1;i++)
         scanf("%d, ", &v[i]);
     scanf("%d;\n", &v[i]);
-    for(i=0;i<n;i++)
-        original[i]=v[i];
-    //srand(time(NULL));
-    j=0;
-    start = std::clock();
-    for(k=0;k<1000;k++)
+    
+    // saves the original vector
+    //for(i=0;i<n;i++)
+        //original[i]=v[i];
+        
+    // correctness tester flag
+    //j=0;
+    
+    //timing device
+    //start = std::clock();
+    // this is done in order to get precision timing with std::clock()
+    //for(k=0;k<1000;k++)
     {
-        for(i=0;i<n;i++)
-            v[i]=original[i];
-        // random data generator
-        //for(i=0;i<MAX;i++)
-            //v[i]=(rand() % 1000000) + 1;
+        // this is done in order to restore the original vector to be sorted
+        //for(i=0;i<n;i++)
+            //v[i]=original[i];
+            
         bubble(v,0,n-1);
 
         // correctness tester
-        for(i=n-1;i>0;i--)
-            if(v[i]<v[i-1]) j=1;
-    }    
-    if(j) std::cout<<"TEST "<<count++<<" FAILED\n";
-    else std::cout<<"TEST "<<count++<<" PASSED\n";
-    // CSV correctness test generator
-    /*
-    std::cout<<"Original,Sorted\n";
-    for(i=0;i<n;i++)
-        std::cout<< original[i] << ',' << v[i] << '\n';
-    */
-    duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
-    std::cout<< duration <<'\n';
+        //for(i=n-1;i>0;i--)
+            //if(v[i]<v[i-1]) j=1;
+    }
+    // correctness tester output    
+    //if(j) std::cout<<"TEST "<<count++<<" FAILED\n";
+    //else std::cout<<"TEST "<<count++<<" PASSED\n";
+    
+    // timing device
+    //duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
+    //std::cout<< duration <<'\n';
+    
+    // prints the sorted vector
     std::cout<<n<<", ";
     for(i=0;i<n-1;i++)
         std::cout<<v[i]<<", ";

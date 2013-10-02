@@ -1,0 +1,22 @@
+\begin{thebibliography}{}
+
+\bibitem[Azevedo et al 2005]{springerlink:10.1007/s10766-005-7301-0}
+Azevedo, Rodolfo and Rigo, Sandro and Bartholomeu, Marcus and Araujo,
+	Guido and Araujo, Cristiano and Barros, Edna (2005).
+\newblock The ArchC Architecture Description Language and Tools.
+\newblock In Azevedo et al, editor, {\em International Journal of Parallel Programming},
+  pages 453--484. Springer Netherlands.
+
+\bibitem[Azevedo et al 2010]{azevedo2010wse}
+Azevedo, Rodolfo and Albertini, Bruno and Rigo, Sandro (2010).
+\newblock ARP: Um Gerenciador de Pacotes para Sistemas Embarcados com Processadores Modelados em ArchC.
+\newblock In Azevedo et al, editor, {\em Workshop de Sistemas Embarcados - WSE},
+SBC.
+
+\bibitem[Rigo et al 2004]{Rigo2004SBAC}
+Rigo, S. and Araujo, G. and Bartholomeu, M. and Azevedo, R. (2004).
+\newblock ArchC: a SystemC-based architecture description language.
+\newblock In Rigo et al, editor, {\em 16th Symposium on Computer Architecture and High Performance Computing, 2004},
+  pages 66--73. SBAC-PAD.
+
+\end{thebibliography}
